@@ -1,4 +1,4 @@
-# flutter_recipe
+# flutter_sample_screens
 
 A new Flutter application.
 
