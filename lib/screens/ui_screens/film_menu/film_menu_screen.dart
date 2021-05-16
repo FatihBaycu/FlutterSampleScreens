@@ -20,11 +20,11 @@ class _MyFilmMenuScreen extends State<MyFilmMenuScreen> {
 
   Future<List<Film>> getFilms() async {
     var films = <Film>[];
-    var film1 = Film(1, "Anadoluda", "assets/images/film_images/anadolu_film.jpg",15.99);
-    var film2 = Film(2, "Django", "assets/images/film_images/django_film.jpg",9.99);
-    var film3 = Film(3, "Inception","assets/images/film_images/inception_film.jpg", 19.99);
-    var film4 = Film(4, "Intersallar","assets/images/film_images/intersallar_film.jpg", 29.99);
-    var film5 = Film(4, "Tenet","assets/images/film_images/tenet_film.jpg", 49.99);
+    var film1 = Film(1, "Anadoluda", "assets/images/film_images/anadolu_film.jpg",15.99,"file:///C:/Users/Fatih/AndroidStudioProjects/flutter_recipe/assets/images/film_images/tenet_film_trailer.mp4");
+    var film2 = Film(2, "Django", "assets/images/film_images/django_film.jpg",9.99,"assets/images/film_images/tenet_film_trailer.mp4");
+    var film3 = Film(3, "Inception","assets/images/film_images/inception_film.jpg", 19.99,"assets/images/film_images/tenet_film_trailer.mp4");
+    var film4 = Film(4, "Intersallar","assets/images/film_images/intersallar_film.jpg", 29.99,"assets/images/film_images/tenet_film_trailer.mp4");
+    var film5 = Film(4, "Tenet","assets/images/film_images/tenet_film.jpg", 49.99,"assets/images/film_images/tenet_film_trailer.mp4");
 
     films.add(film1);
     films.add(film2);
@@ -88,8 +88,9 @@ class Film {
   String name;
   String image;
   double price;
+  String trailer;
 
-  Film(this.id, this.name, this.image, this.price);
+  Film(this.id, this.name, this.image, this.price,this.trailer);
 
 }
 
