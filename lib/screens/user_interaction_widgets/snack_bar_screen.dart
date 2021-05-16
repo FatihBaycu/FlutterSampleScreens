@@ -27,10 +27,10 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ElevatedButton(
-              child: Text("Varsayılan"),
+              child: Text("Default"),
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text("Merhaba")),
+                  SnackBar(content: Text("Hello")),
                 );
               },
             ),
@@ -40,13 +40,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     duration: Duration(seconds: 1),
-                    content: Text("Silmek istiyor musunuz?"),
+                    content: Text("Do you want delete?"),
                     action: SnackBarAction(
-                      label: "Evet",
+                      label: "Yes",
                       onPressed: () {
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           duration:Duration(seconds: 1),
-                          content: Text("Silindi"),
+                          content: Text("Deleted"),
                         ));
                       },
                     ),
@@ -55,19 +55,19 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ElevatedButton(
-              child: Text("SnackBar Özel"),
+              child: Text("SnackBar Special"),
               onPressed: () {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: Text("İnternet Bağlantısı Yok",
+                    content: Text("No Internet connection",
                         style: TextStyle(color: Colors.indigo)),
                     backgroundColor: Colors.white,
                     duration: Duration(seconds: 5),
                     action: SnackBarAction(
-                      label: "Tekrar Dene",
+                      label: "Try Again",
                       textColor: Colors.red,
                       onPressed: (){
-                        print("Tekar Denedi");
+                        print("Tried Again");
                       },
                     ),
                   ),

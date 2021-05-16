@@ -6,40 +6,40 @@ class SwitchScreen extends StatefulWidget {
 }
 
 class _SwitchScreenState extends State<SwitchScreen> {
-  bool switchKontrol=false;
-  bool switchKontrol2=false;
+  bool switchControl=false;
+  bool switchControl2=false;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("Switch Kullanımı"),),
+        appBar: AppBar(title: Text("Switch Screen"),),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Switch(
-                  value: switchKontrol,
+                  value: switchControl,
                   activeTrackColor: Colors.lightGreenAccent,
                   activeColor: Colors.green,
                 inactiveTrackColor: Colors.black54,
                 inactiveThumbColor: Colors.black,
-                onChanged: (veri){
+                onChanged: (data){
                     setState(() {
-                      switchKontrol=veri;
+                      switchControl=data;
                     });
-                    print("Switch : $veri");
+                    print("Switch : $data");
                 },
               ),      Switch(
-                  value: switchKontrol2,
+                  value: switchControl2,
                   activeTrackColor: Colors.lightGreenAccent,
                   activeColor: Colors.green,
                 inactiveTrackColor: Colors.black54,
                 inactiveThumbColor: Colors.black,
-                onChanged: (veri){
+                onChanged: (data){
                     setState(() {
-                      switchKontrol2=veri;
+                      switchControl2=data;
                     });
-                    print("Switch : $veri");
+                    print("Switch : $data");
                 },
               ),
             ],

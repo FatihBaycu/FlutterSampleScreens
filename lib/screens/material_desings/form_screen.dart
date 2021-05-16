@@ -17,8 +17,8 @@ class MyFromScreen extends StatefulWidget{
 class _MyFormScreen extends State<MyFromScreen>{
 
   var formKey=GlobalKey<FormState>();
-  var kullaniciAdiTxt=TextEditingController();
-  var kullaniciSifreTxt=TextEditingController();
+  var usernameTxt=TextEditingController();
+  var passwordTxt=TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,23 +36,23 @@ class _MyFormScreen extends State<MyFromScreen>{
                  child: Column(
                    children:[
                      TextFormField(
-                     controller: kullaniciAdiTxt,
-                     decoration: InputDecoration(hintText: "Kullanıcı Adı"),
+                     controller: usernameTxt,
+                     decoration: InputDecoration(hintText: "Username"),
                      validator: (girilenMetin){
                        if(girilenMetin.isEmpty){
-                         return "Kullancı adı giriniz";
+                         return "enter username";
                        }
                        return null;
                      },
                    ),
                      TextFormField(
-                     controller: kullaniciSifreTxt,
-                     decoration: InputDecoration(hintText: "Kullanıcı Şifre"),
+                     controller: passwordTxt,
+                     decoration: InputDecoration(hintText: "Password"),
                      validator: (girilenMetin){
                        if(girilenMetin.isEmpty){
-                         return "Kullancı şifresini giriniz";
+                         return "Enter password";
                        }   if(girilenMetin.length<6){
-                         return "Kullancı şifresi en az 6 karakter olmalı";
+                         return "password length must be at least 6 characters";
                        }
                        return null;
                      },
@@ -60,11 +60,11 @@ class _MyFormScreen extends State<MyFromScreen>{
                      ElevatedButton(
                        child: Text("Giriş"),
                        onPressed: (){
-                         bool kontrolSonucu=formKey.currentState.validate();
-                         if(kontrolSonucu){
-                           String kullaniciAdi=kullaniciAdiTxt.text;
-                           String kullaniciSifre=kullaniciSifreTxt.text;
-                           print("Kullancı Adı: $kullaniciAdi\nKullanıcı Şifre: $kullaniciSifre");
+                         bool controlResult=formKey.currentState.validate();
+                         if(controlResult){
+                           String username=usernameTxt.text;
+                           String password=passwordTxt.text;
+                           print("Kullancı Adı: $username\nKullanıcı Şifre: $password");
                          }
                        },
                      ),

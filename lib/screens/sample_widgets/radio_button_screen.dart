@@ -7,12 +7,12 @@ class RadioButtonScreen extends StatefulWidget {
 
 class _RadioButtonScreenState extends State<RadioButtonScreen> {
 
-  int radioDeger=0;
+  int radioValue=0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text("Radio Button Kullanımı"),),
+        appBar: AppBar(title: Text("Radio Button Screen"),),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -20,34 +20,34 @@ class _RadioButtonScreenState extends State<RadioButtonScreen> {
               RadioListTile(
                 title: Text("Galatasaray"),
                 value: 1,
-                groupValue: radioDeger,
+                groupValue: radioValue,
                 activeColor: Colors.red,
-                onChanged: (int veri){
+                onChanged: (int data){
                   setState(() {
-                    radioDeger=veri;
+                    radioValue=data;
                   });
-                  print("Galatasaray seçildi");
+                  print("Galatasaray selected");
                 },
               ),
               RadioListTile(
                 title: Text("Fenerbahçe"),
                 value: 2,
-                groupValue: radioDeger,
+                groupValue: radioValue,
                 activeColor: Colors.indigo,
-                onChanged: (int veri){
+                onChanged: (int data){
                   setState(() {
-                    radioDeger=veri;
+                    radioValue=data;
                   });
-                  print("Fenerbahçe seçildi");
+                  print("Fenerbahçe selected");
                 },
               ),
               ElevatedButton(onPressed: (){
-                if(radioDeger==1){
-                  print("Galatasaray Seçildi");
-                }if(radioDeger==2){
-                  print("Fenerbahçe Seçildi");
+                if(radioValue==1){
+                  print("Galatasaray selected");
+                }if(radioValue==2){
+                  print("Fenerbahçe selected");
                 }
-              }, child:Text("Göster"))
+              }, child:Text("Show"))
             ],
           ),
         ),

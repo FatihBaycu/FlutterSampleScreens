@@ -6,8 +6,8 @@ class CheckBoxScreen extends StatefulWidget {
 }
 
 class _CheckBoxScreenState extends State<CheckBoxScreen> {
-  bool kotlinDurum=false;
-  bool dartDurum=false;
+  bool kotlinValue=false;
+  bool dartValue=false;
 
   @override
   Widget build(BuildContext context) {
@@ -20,33 +20,33 @@ class _CheckBoxScreenState extends State<CheckBoxScreen> {
             children: [
               CheckboxListTile(
                 title: Text("Kotlin"),
-                value: kotlinDurum,
+                value: kotlinValue,
                 controlAffinity: ListTileControlAffinity.leading,
                 checkColor: Colors.red,
                 activeColor: Colors.deepPurple,
-                onChanged: (bool veri){
-                  print("Kotlin seçildi : $veri");
+                onChanged: (bool data){
+                  print("Kotlin selected : $data");
                   setState(() {
-                    kotlinDurum=veri;
+                    kotlinValue=data;
                   });
                 },
               ),          CheckboxListTile(
                 title: Text("Dart"),
-                value: dartDurum,
+                value: dartValue,
                 controlAffinity: ListTileControlAffinity.leading,
                 checkColor: Colors.red,
                 activeColor: Colors.deepPurple,
-                onChanged: (bool veri){
-                  print("Dart seçildi : $veri");
+                onChanged: (bool data){
+                  print("Dart selected : $data");
                   setState(() {
-                    dartDurum=veri;
+                    dartValue=data;
                   });
                 },
               ),
               ElevatedButton(onPressed: (){
-                print("Dart durum : $dartDurum");
-                print("Kotlin durum : $kotlinDurum");
-              }, child: Text("Göster")),
+                print("Dart value : $dartValue");
+                print("Kotlin valu : $kotlinValue");
+              }, child: Text("Show")),
             ],
           ),
         ),

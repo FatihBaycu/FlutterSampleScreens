@@ -6,8 +6,8 @@ class ProgressBarScreen extends StatefulWidget {
 }
 
 class _ProgressBarScreenState extends State<ProgressBarScreen> {
-  bool progressGorun = true;
-  double ilerleme = 50.0;
+  bool progressBar = true;
+  double increment = 50.0;
 
   @override
   Widget build(BuildContext context) {
@@ -24,40 +24,40 @@ class _ProgressBarScreenState extends State<ProgressBarScreen> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        progressGorun = true;
+                        progressBar = true;
                       });
                     },
-                    child: Text("Başla")),
+                    child: Text("Start")),
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        progressGorun = false;
+                        progressBar = false;
                       });
                     },
-                    child: Text("Dur")),
+                    child: Text("Stop")),
               ],
             ),
             Visibility(
-                visible: progressGorun,
+                visible: progressBar,
                 child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(Colors.deepPurple),
                 )),
-            Text("Sonuç : ${ilerleme.toInt()}"),
+            Text("Result : ${increment.toInt()}"),
             Slider(
                 max: 100,
                 min: 0.0,
-                value: ilerleme,
+                value: increment,
                 activeColor: Colors.indigo,
                 inactiveColor: Colors.red,
                 onChanged: (double i){
                   setState(() {
-                    ilerleme=i;
+                    increment=i;
                   });
                 }
                 ),
             ElevatedButton(onPressed: (){
-              print("Slider ilerleme : ${ilerleme.toInt()}");
-            }, child: Text("Göster")),
+              print("Slider increment : ${increment.toInt()}");
+            }, child: Text("Show")),
           ],
         ),
       ),

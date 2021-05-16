@@ -6,8 +6,8 @@ class ToggleButtonScreen extends StatefulWidget {
 }
 
 class _ToggleButtonScreenState extends State<ToggleButtonScreen> {
-  var toogleDurumlar=[false,true,false];
-  int secilenToggleIndexs=0;
+  var toggleStaus=[false,true,false];
+  int selectedToogleIndex=0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,20 +22,20 @@ class _ToggleButtonScreenState extends State<ToggleButtonScreen> {
                   Icon(Icons.looks_two),
                   Icon(Icons.looks_3),
                 ],
-                isSelected: toogleDurumlar,
+                isSelected: toggleStaus,
                 color: Colors.pink,
                 selectedColor: Colors.yellow,
                 onPressed: (int secilenIndexs){
                   setState(() {
-                    toogleDurumlar[secilenIndexs]=!toogleDurumlar[secilenIndexs];
+                    toggleStaus[secilenIndexs]=!toggleStaus[secilenIndexs];
                   });
-                  secilenToggleIndexs=secilenIndexs;
-                  print("${secilenIndexs+1}. toggle seçildi");
+                  selectedToogleIndex=secilenIndexs;
+                  print("${secilenIndexs+1}. selected toogle");
                 },
               ),
               ElevatedButton(onPressed: (){
-                print("En son ${secilenToggleIndexs+1}. toggle seçildi");
-              }, child: Text("Göster"))
+                print("Last ${selectedToogleIndex+1}. selected toogle");
+              }, child: Text("Show"))
             ],
           ),
         ),

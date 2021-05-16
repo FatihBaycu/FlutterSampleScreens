@@ -26,11 +26,11 @@ class _ListViewStaticScreen extends State<MyListViewStaticScreen>{
             children: [
                   ListTile(
                     leading: Icon(Icons.wb_sunny),
-                    title:Text("Güneş"),
-                    subtitle: Text("Güneş alt başık"),
+                    title:Text("Sun"),
+                    subtitle: Text("Sun subtitle"),
                     trailing: Icon(Icons.navigate_next),
                     onTap:(){
-                      print("Güneş Tıklandı");
+                      print("Sun Clicked");
                   }
                   ),   ListTile(
                     leading: Icon(Icons.star),

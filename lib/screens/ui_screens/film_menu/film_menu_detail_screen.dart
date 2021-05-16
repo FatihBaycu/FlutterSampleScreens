@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_recipe/screens/ui_screens/film_menu/film_menu_screen.dart';
+import 'package:flutter_recipe/screens/ui_screens/film_menu/film.dart';
 import 'package:video_player/video_player.dart';
 
 class FilmMenuDetailScreen extends StatelessWidget {
@@ -54,8 +54,10 @@ class _MyFilmMenuDetailScreen extends State<MyFilmMenuDetailScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+              Text("Trailer",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 50),),
               Padding(
                 padding: const EdgeInsets.all(8.0),
+
                 child: SizedBox(
                   height: 300,
                   child: FutureBuilder(

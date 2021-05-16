@@ -33,19 +33,19 @@ class _MyPopupMenuScreen extends State<MyPopupMenuScreen> {
                 [
                 PopupMenuItem(
                   value: 1,
-                  child: Text("Güncelle",style: TextStyle(color:Colors.orange),),
+                  child: Text("Update",style: TextStyle(color:Colors.orange),),
                 ),
                 PopupMenuItem(
                   value: 1,
-                  child: Text("Sil",style: TextStyle(color:Colors.red),),
+                  child: Text("Delete",style: TextStyle(color:Colors.red),),
                 ),
                 ],
               onCanceled: (){
-                print("Seçim yapılmadı");
+                print("Not Selected");
               },
               onSelected: (menuItemValue){
-                if(menuItemValue==1){print("Güncelle Seçildi");}
-                if(menuItemValue==2){print("Sil Seçildi");}
+                if(menuItemValue==1){print("Select Update");}
+                if(menuItemValue==2){print("Select Delete");}
               },
             ),
           ],

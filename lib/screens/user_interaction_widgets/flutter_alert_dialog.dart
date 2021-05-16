@@ -16,7 +16,7 @@ class MyAlertDialogScreen extends StatefulWidget {
 }
 
 class _MyAlertDialogScreen extends State<MyAlertDialogScreen> {
-  var kullaniciAdiTextBox=TextEditingController();
+  var usernameTxt=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,25 +36,25 @@ class _MyAlertDialogScreen extends State<MyAlertDialogScreen> {
 
   normalAlertDialog() {
     return ElevatedButton(
-      child: Text("Alert Aç"),
+      child: Text("Open Alert"),
       onPressed: () {
         showDialog(
           context: context,
           builder: (context) {
             return AlertDialog(
-              title: Text("Başlık"),
-              content: Text("İçerik"),
+              title: Text("Header"),
+              content: Text("Content"),
               actions: [
                 TextButton(
-                  child: Text("İptal"),
+                  child: Text("Cancel"),
                   onPressed: () {
                     Navigator.pop(context);
                   },
                 ),
                 TextButton(
-                  child: Text("Tamam"),
+                  child: Text("Okey"),
                   onPressed: () {
-                    print("tamama basıldı");
+                    print("Click Okey.");
                     Navigator.pop(context);
                   },
                 ),
@@ -68,22 +68,22 @@ class _MyAlertDialogScreen extends State<MyAlertDialogScreen> {
 
   farkliAlertDialog() {
     return ElevatedButton(
-      child: Text("Farklı Alert Aç"),
+      child: Text("Open Different Alert"),
       onPressed: () {
         showDialog(
             context: context,
             builder: (context) {
               return AlertDialog(
-                title: Text("Kullanıcı Girişi"),
+                title: Text("User Enter"),
                 content: SizedBox(
                   height: 80,
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
                         TextField(
-                          controller: kullaniciAdiTextBox,
+                          controller: usernameTxt,
                           decoration: InputDecoration(
-                            labelText: "Kullanıcı Adı"
+                            labelText: "Username"
                           ),
                         ),
                       ],
@@ -91,13 +91,13 @@ class _MyAlertDialogScreen extends State<MyAlertDialogScreen> {
                   ),
                 ),
                 actions: [
-                  ElevatedButton(child: Text("İptal",),
+                  ElevatedButton(child: Text("Cancel",),
                     style:ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.red),),
                     onPressed: () => Navigator.pop(context),),
-                  ElevatedButton(child: Text("Kaydet"),
+                  ElevatedButton(child: Text("Save"),
                     onPressed: (){
-                    print("Girilen Veri ${kullaniciAdiTextBox.text}");
-                    kullaniciAdiTextBox.text="";
+                    print("Data ${usernameTxt.text}");
+                    usernameTxt.text="";
                     Navigator.pop(context);
                     },),
                 ],

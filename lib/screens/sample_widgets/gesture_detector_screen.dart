@@ -16,9 +16,9 @@ class _GestureDetectorScreenState extends State<GestureDetectorScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               GestureDetector(
-                onTap: (){print("Container tıklandı");},
-                onDoubleTap: (){print("Container çift tıklandı");},
-                onLongPress: (){print("Container uzun tıklandı");},
+                onTap: (){print("Container clicked");},
+                onDoubleTap: (){print("Container double clicked");},
+                onLongPress: (){print("Container long clicked");},
                 child: Container(
                   width: 200,
                   height: 200,

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_recipe/screens/drawer/drawer_screen.dart';
+import 'package:flutter_recipe/screens/material_desings/bottom_navigation_bar/bottom_navigation_bar_screen.dart';
+import 'package:flutter_recipe/screens/material_desings/tabs/tabs_screen.dart';
 import 'package:flutter_recipe/screens/ui_screens/film_menu/film_menu_screen.dart';
-import 'package:flutter_recipe/screens/ui_screens/film_menu/video_player_controller.dart';
+import 'package:flutter_recipe/screens/ui_screens/video_player/video_player_controller.dart';
 import 'package:flutter_recipe/screens/ui_screens/food_menu/food_menu_screen.dart';
 import 'package:flutter_recipe/screens/material_desings/future_builder/future_builder_listview_screen.dart';
 import 'package:flutter_recipe/screens/material_desings/gridview/gridview_dynamic_screen.dart';
@@ -26,7 +29,7 @@ import 'package:flutter_recipe/screens/sample_widgets/switch_screen.dart';
 import 'package:flutter_recipe/screens/sample_widgets/toggle_buttons_screen.dart';
 
 void main() {
-  runApp(FilmMenuScreen());
+  runApp(DrawerScreen());
 }
 
 

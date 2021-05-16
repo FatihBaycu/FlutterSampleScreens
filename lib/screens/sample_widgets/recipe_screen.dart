@@ -44,8 +44,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(child: SizedBox(height: screenWidth/8,child: ElevatedButton(onPressed: (){}, child: Yazi("Like",screenWidth/25),style:ButtonStyle(backgroundColor:MaterialStateProperty.all(Colors.orange),),))),
-                Expanded(child: SizedBox(height:screenWidth/8,child: ElevatedButton(onPressed: (){}, child: Yazi("Comment",screenWidth/25,),style:ButtonStyle(backgroundColor:MaterialStateProperty.all(Colors.red),),))),
+                Expanded(child: SizedBox(height: screenWidth/8,child: ElevatedButton(onPressed: (){}, child: MyTextWidget("Like",screenWidth/25),style:ButtonStyle(backgroundColor:MaterialStateProperty.all(Colors.orange),),))),
+                Expanded(child: SizedBox(height:screenWidth/8,child: ElevatedButton(onPressed: (){}, child: MyTextWidget("Comment",screenWidth/25,),style:ButtonStyle(backgroundColor:MaterialStateProperty.all(Colors.red),),))),
               ],
             ),
             Padding(
@@ -53,7 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("\nKöfte\n",
+                  Text("\nMeatball\n",
                       style:TextStyle(
                         color: Colors.deepOrangeAccent,
                         fontWeight: FontWeight.bold,
@@ -61,11 +61,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       )),
                   Row(
                     children: [
-                      Yazi("Izgara Üzerinde Pişirmeye Uygun",screenWidth/25),
+                      MyTextWidget("Suitable for Grilling",screenWidth/25),
                       Spacer(),
-                      Yazi("8 Ağustos",screenWidth/25),
+                      MyTextWidget("8 Agust",screenWidth/25),
                     ],),
-                  Padding(padding: EdgeInsets.all(screenHeight/100),child: Yazi("Lorem Ipsum is simply dummy text of the printing and typesetting industry.  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", screenWidth/25))
+                  Padding(padding: EdgeInsets.all(screenHeight/100),child: MyTextWidget("Lorem Ipsum is simply dummy text of the printing and typesetting industry.  scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.", screenWidth/25))
 
                 ],
               ),
@@ -77,16 +77,16 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 }
 
-class Yazi extends StatelessWidget {
-  String icerik;
-  double yaziBoyut;
+class MyTextWidget extends StatelessWidget {
+  String content;
+  double fontSize;
 
 
-  Yazi(this.icerik, this.yaziBoyut);
+  MyTextWidget(this.content, this.fontSize);
 
   @override
   Widget build(BuildContext context) {
-    return Text(icerik,style: TextStyle(fontSize: yaziBoyut,),);
+    return Text(content,style: TextStyle(fontSize: fontSize,),);
   }
 }
 
