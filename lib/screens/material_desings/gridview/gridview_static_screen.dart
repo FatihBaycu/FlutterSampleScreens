@@ -23,19 +23,22 @@ class _MyGridViewStaticScreen extends State<MyGridViewStaticScreen> {
           crossAxisCount: 2,
           childAspectRatio: 2/1,
           children: [
-            Card(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.wb_sunny),
-                  Text("Güneş")
-                ],
+            GestureDetector(
+              onTap: (){print("Güneş Tıklandı");},
+              child: Card(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.wb_sunny),
+                    Text("Güneş")
+                  ],
+                ),
               ),
             ),     Card(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(Icons.brightness_2_outlined),
+                  Icon(Icons.brightness_2),
                   Text("Ay")
                 ],
               ),
