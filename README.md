@@ -1,5 +1,6 @@
 # flutter_sample_screens
 
+- if you want run any screens in this repo go to main.dart and change runApp(SCREEN-CLASS-NAME);
 
 In this repository you can find screens with flutter related widgets
 # Contents
